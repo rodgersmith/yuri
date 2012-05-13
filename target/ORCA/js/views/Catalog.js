@@ -45,4 +45,8 @@ B2C.Catalog.prototype.init = function ($el) {
         }
     });
 
+    $("#catalogNavlist").click(function(){
+        alert("hi");
+    });
+
 };

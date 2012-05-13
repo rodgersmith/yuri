@@ -1,0 +1,45 @@
+<div class="row-fluid">
+    <div class="span10">
+        <h2><%= data.name %></h2>
+        <h3>By <%= data.vendor.name %></h3>
+        <p><img src="<%= data.image %>" width="160" height="160"/></p>
+        <br>
+        <table class="table table-striped">
+            <tr>
+                <td><h6>Quantity Per Unit:</h6></td>
+                <td> <%= data.qty %></td>
+            </tr>
+            <tr>
+                <td><h6>Standard Price:</h6></td>
+                <td> <%= FormatCurrency(data.standardPrice) %></td>
+            </tr>
+            <tr>
+                <td><h6>Target Price:</h6></td>
+                <td> <%= FormatCurrency(data.targetPrice) %></td>
+            </tr>
+            <tr>
+                <td><h6>Target Number of Participants:</h6></td>
+                <td> <%= data.participantTargetNumber %></td>
+            </tr>
+            <tr>
+                <td><h6>Current Number of Participants:</h6></td>
+                <td> <%= data.currentParticipantNumber %></td>
+            </tr>
+            <tr>
+                <td><h6>Description:</h6></td>
+                <td> <%= data.description %></td>
+            </tr>
+
+        </table>
+    </div>
+
+
+    <div class="span2">
+        <div class="alert alert-info ">
+        <a href="" >
+            <i class="icon-shopping-cart"></i>
+            Join this deal
+        </a>
+        </div>
+    </div>
+</div>

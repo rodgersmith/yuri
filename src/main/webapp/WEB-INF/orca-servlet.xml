@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:security="http://www.springframework.org/schema/security"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-3.1.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd
+        http://www.springframework.org/schema/security
+        http://www.springframework.org/schema/security/spring-security-3.1.xsd">
+
+    <!-- Scans the classpath of this application for @Components to deploy as beans -->
+    <context:component-scan base-package="com.hmstn.orca" scoped-proxy="targetClass" />
+
+    <!-- Configures the @Controller programming model -->
+    <mvc:annotation-driven />
+
+    <!-- Configure security -->
+    <security:http pattern="/css/**" security="none"/>
+
+    <security:http pattern="/login.html" security="none" />
+
+    <security:http auto-config="true">
+        <security:intercept-url pattern="/xxx/**" access="ROLE_USER" />
+        <security:form-login login-page='/templates/login.html' default-target-url='/home.html'
+                    always-use-default-target='true' />
+    </security:http>
+
+    <security:authentication-manager>
+        <security:authentication-provider>
+            <security:user-service>
+                <security:user name="jimi" password="jimi" authorities="ROLE_USER, ROLE_ADMIN" />
+                <security:user name="bob" password="bob" authorities="ROLE_USER" />
+            </security:user-service>
+        </security:authentication-provider>
+    </security:authentication-manager>
+
+    <!-- Loads MongoDB configuraton -->
+    <import resource="mongo-config.xml"/>
+
+</beans>

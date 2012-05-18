@@ -1,10 +1,16 @@
 package com.hmstn.orca.repository;
 
-import com.hmstn.orca.domain.*;
+import com.hmstn.orca.domain.Catalog;
+import com.hmstn.orca.domain.ItemType;
+import com.hmstn.orca.domain.Vendor;
+import com.hmstn.orca.domain.VendorProduct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Repository;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -26,6 +32,10 @@ public class CatalogRepository {
 
     private void loadRepo(){
 
+        ItemType type = new ItemType();
+        type.key = 10;
+        type.description = "Gloves";
+
         Vendor vendor = new Vendor();
         vendor.id = 1;
         vendor.name = "Kimberly-Clark";
@@ -41,6 +51,7 @@ public class CatalogRepository {
         product.image = "../images/gloves.jpg";
         product.participantTargetNumber = 35;
         product.currentParticipantNumber = 15;
+        product.itemType = type;
 
         catalog.products.add(product);
 
@@ -61,6 +72,7 @@ public class CatalogRepository {
         product.image = "../images/NitrateGlovesjpg.jpg";
         product.participantTargetNumber = 40;
         product.currentParticipantNumber = 10;
+        product.itemType = type;
 
         catalog.products.add(product);
 
@@ -83,6 +95,7 @@ public class CatalogRepository {
         product.image = "../images/safeskin_gloves.jpg";
         product.participantTargetNumber = 60;
         product.currentParticipantNumber = 40;
+        product.itemType = type;
 
         catalog.products.add(product);
 
@@ -105,6 +118,7 @@ public class CatalogRepository {
         product.image = "../images/gloves.jpg";
         product.participantTargetNumber = 55;
         product.currentParticipantNumber = 32;
+        product.itemType = type;
 
         catalog.products.add(product);
 
@@ -123,6 +137,7 @@ public class CatalogRepository {
         product.image = "../images/gloves.jpg";
         product.participantTargetNumber = 35;
         product.currentParticipantNumber = 15;
+        product.itemType = type;
 
         catalog.products.add(product);
 
@@ -144,6 +159,7 @@ public class CatalogRepository {
         product.image = "../images/NitrateGlovesjpg.jpg";
         product.participantTargetNumber = 35;
         product.currentParticipantNumber = 5;
+        product.itemType = type;
 
         catalog.products.add(product);
 
@@ -166,6 +182,7 @@ public class CatalogRepository {
         product.image = "../images/safeskin_gloves.jpg";
         product.participantTargetNumber = 35;
         product.currentParticipantNumber = 3;
+        product.itemType = type;
 
         catalog.products.add(product);
 
@@ -188,6 +205,7 @@ public class CatalogRepository {
         product.image = "../images/gloves.jpg";
         product.participantTargetNumber = 40;
         product.currentParticipantNumber = 35;
+        product.itemType = type;
 
         catalog.products.add(product);
 
@@ -207,6 +225,7 @@ public class CatalogRepository {
         product.image = "../images/gloves.jpg";
         product.participantTargetNumber = 40;
         product.currentParticipantNumber = 10;
+        product.itemType = type;
 
         catalog.products.add(product);
 
@@ -228,6 +247,7 @@ public class CatalogRepository {
         product.image = "../images/NitrateGlovesjpg.jpg";
         product.participantTargetNumber = 45;
         product.currentParticipantNumber = 35;
+        product.itemType = type;
 
         catalog.products.add(product);
 
@@ -250,6 +270,7 @@ public class CatalogRepository {
         product.image = "../images/safeskin_gloves.jpg";
         product.participantTargetNumber = 25;
         product.currentParticipantNumber = 23;
+        product.itemType = type;
 
         catalog.products.add(product);
 
@@ -272,6 +293,9 @@ public class CatalogRepository {
         product.image = "../images/gloves.jpg";
         product.participantTargetNumber = 35;
         product.currentParticipantNumber = 15;
+        product.itemType = type;
+
+
 
         catalog.products.add(product);
     }
@@ -280,10 +304,19 @@ public class CatalogRepository {
     @Autowired
     MongoTemplate mongoTemplate;
 
-    public Catalog getCatalog() throws Exception {
+    public Catalog getCatalogByType(String type) throws Exception {
 //        Catalog results = mongoTemplate.find(Catalog.class);
 //        return results;
-        return catalog;
+        Catalog returnval = new Catalog();
+
+        for( VendorProduct product : catalog.products )
+        {
+            if ((product.itemType.description.equals(type)))
+            {
+                returnval.products.add(product);
+            }
+        }
+        return returnval;
 
     }
 
@@ -298,5 +331,82 @@ public class CatalogRepository {
         throw new Exception("item not found");
     }
 
+    public List<ItemType> getCatalogItemTypes() throws Exception
+    {
+        List<ItemType> itemTypes = new ArrayList<ItemType>();
+        ItemType type = new ItemType();
+        type.key = 0;
+        type.description = "Acrylics";
+        itemTypes.add(type);
+        type = new ItemType();
+        type.key = 1;
+        type.description = "Alloys";
+        itemTypes.add(type);
+        type = new ItemType();
+        type.key = 2;
+        type.description = "Anesthetic";
+        itemTypes.add(type);
+        type = new ItemType();
+        type.key = 3;
+        type.description = "Books";
+        itemTypes.add(type);
+        type = new ItemType();
+        type.key = 4;
+        type.description = "Bondingagents";
+        itemTypes.add(type);
+        type = new ItemType();
+        type.key = 5;
+        type.description = "Cements";
+        itemTypes.add(type);
+        type = new ItemType();
+        type.key = 6;
+        type.description = "Crowns";
+        itemTypes.add(type);
+        type = new ItemType();
+        type.key = 7;
+        type.description = "Eyewear";
+        itemTypes.add(type);
+        type = new ItemType();
+        type.key = 8;
+        type.description = "Desensitizers";
+        itemTypes.add(type);
+        type = new ItemType();
+        type.key = 9;
+        type.description = "Diagnostics";
+        itemTypes.add(type);
+        type = new ItemType();
+        type.key = 10;
+        type.description = "Gloves";
+        itemTypes.add(type);
+        type = new ItemType();
+        type.key = 11;
+        type.description = "Hygiene";
+        itemTypes.add(type);
+        type = new ItemType();
+        type.key = 12;
+        type.description = "Impression Trays";
+        itemTypes.add(type);
+        type = new ItemType();
+        type.key = 13;
+        type.description = "Lab Products";
+        itemTypes.add(type);
+        type = new ItemType();
+        type.key = 14;
+        type.description = "Mouth Guard";
+        itemTypes.add(type);
+        type = new ItemType();
+        type.key = 15;
+        type.description = "Oral Rinses";
+        itemTypes.add(type);
+        type = new ItemType();
+        type.key = 16;
+        type.description = "Pharmaceuticals";
+        itemTypes.add(type);
+        type = new ItemType();
+        type.key = 17;
+        type.description = "Surgical Products";
+        itemTypes.add(type);
 
+        return itemTypes;
+    }
 }

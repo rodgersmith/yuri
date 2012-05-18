@@ -14,6 +14,7 @@ public class VendorProduct {
     public Integer id;
     public String name;
     public String description;
+    public ItemType itemType;
     public Integer qty;
     public double standardPrice;
     public double targetPrice;

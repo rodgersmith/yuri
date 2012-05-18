@@ -8,7 +8,7 @@ package com.hmstn.orca.domain;
  * To change this template use File | Settings | File Templates.
  */
 public class Vendor {
-    public int id;
+    public Integer id;
     public String name;
 
 }

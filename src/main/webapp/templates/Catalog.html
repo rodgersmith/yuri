@@ -3,63 +3,24 @@
 
 
 <div class="row-fluid" style="margin-bottom: 10px;">
-    <div class="span3">
+    <div class="span2">
         <div class="well sidebar-nav">
             <form class="form-search">
-                 <input type="text" class="input-medium search-query" placeholder="find an item">
-                 <button type="submit" class="btn">Search</button>
+                 <input type="text" class="input-medium search-query" placeholder="find an item" style="margin-right: 2px">
             </form>
 
-            <ul id="catalogNavlist" class="nav nav-list">
-                <li class="active">
-                    <a href="#">Gloves</a>
-                </li>
-                <li class="">
-                    <a href="#">Bonding Agents</a>
-                </li>
+            <ul id="navlist" class="nav nav-list">
+                <% _.each(list, function(item) { %>
+
                 <li>
-                    <a href="#">X-Ray</a>
+                    <a id='<%= item.description %>'  href="#"><%= item.description %></a>
                 </li>
-                <li>
-                    <a href="#">Acrylics</a>
-                </li>
-                <li>
-                    <a href="#">Anesthetics</a>
-                </li>
-                <li>
-                    <a href="#">Crowns</a>
-                </li>
-                <li>
-                    <a href="#">Books</a>
-                </li>
-                <li>
-                    <a href="#">Surgicial Products</a>
-                </li>
-                <li>
-                    <a href="#">Laboratory Products</a>
-                </li>
-                <li>
-                    <a href="#">Impression Trays</a>
-                </li>
+                <% }) %>
+
             </ul>
         </div>
     </div>
-    <div class="span9">
-        <% _.each(data, function(product) { %>
-        <div id="catalog" class="span6">
+    <div id="catalogList-Here" class="span10">
 
-            <a class="catalogLink" id="<%= product.id %>" href="">
-                <img src="<%= product.image %>" width="160" height="100" style="float:left; margin:5px"/>
-            </a>
-            <p class="list-item"><a><%= product.name %><br/></a>
-                Quantity Per Unit: <%= product.qty %><br />
-                Standard Price: <%= FormatCurrency(product.standardPrice) %><br />
-                Target Price: <%= FormatCurrency(product.targetPrice) %><br />
-                Target Number: <%= product.participantTargetNumber %> participants <br/>
-                Current Number: <%= product.currentParticipantNumber %> participants <br/>
-            </p>
-
-        </div>
-        <% });  %>
     </div>
 </div>

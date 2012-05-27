@@ -6,84 +6,139 @@
  * To change this template use File | Settings | File Templates.
  */
 B2C.Catalog = function() {
+    var self = new B2C.BaseView(),
+    getCatalog, getCatalogItemTypes, renderPieCharts, items, addEvents, onError;
 
-};
+    B2C.Catalog.prototype.init = function ($el) {
+        self.toggleMenu("catalog");
+        getCatalogItemTypes($el);
+    };
 
-B2C.Catalog.prototype = new B2C.BaseView();
+    addEvents = function() {
 
-B2C.Catalog.prototype.init = function ($el) {
-    var self = this, getCatalog, getCatalogItemTypes;
-    self.toggleMenu("catalog");
+        $("#navlist a").live("click", function(){
 
-    $("#navlist a").live("click", function(){
+            var that = this;
+            $("#navlist li").removeClass("active");
+            $(that).parent().addClass("active");
+            var itemType = $(that).attr("id");
+            getCatalog(itemType);
 
-        var that = this;
-        $("#navlist li").removeClass("active");
-        $(that).parent().addClass("active");
-        var itemType = $(that).attr("id");
-        getCatalog(itemType);
+            return false;
+        });
 
-       return false;
-    });
+        $('#itemSearch').autocomplete({
+            source: function (request, response){
+                var concepts = [], to;
+                clearTimeout(to);
+                to = setTimeout(function () { // new timeOut set
+                    if ($.trim(request.term).length >= 3) {
+                        var onSuccess = function(data){
+                            concepts = convertJsonDataToNativeArray(data);
+                            response(concepts);
+                        };
+                        B2CCore.get('controllers/catalog/searchcatalog/' + request.term, onSuccess, null, onError);
+                    }
+                }, 500);
+
+            },
+            select : function(event, ui) {
+                if (ui.item.isOnCurrentDashboard){
+                    window.location = "#catalogItem/" + ui.item.value;
+                }
+            },
+            focus : function() {
+                return false;
+            }
+        });
+
+    };
 
 
 
     getCatalog = function(type){
 
-        $.ajax({
-            url: 'controllers/catalog/getcatalog/' + type,
-            type: 'GET',
-            contentType: "application/json; charset=utf-8",
-            dataType: 'json',
-            data: null,
-            success: function(data){
+        var onSuccess = function(data){
 
-                var html = TemplateManager('CatalogList', {data:data.products});
+            var html = TemplateManager('CatalogList', {data:data.products});
 
-                $('#catalogList-Here').html(html);
+            $('#catalogList-Here').html(html);
 
-                $('.catalogLink').live('click', function(){
-                    var that = this;
+            renderPieCharts();
 
-                    window.location = "#catalogItem/" + that.id;
-                    return false;
-                })
+            $('.catalogLink').live('click', function(){
+                var that = this;
+                window.location = "#catalogItem/" + that.id;
+                return false;
+            })
+        };
 
 
-
-            },
-            error: function(e){
-                alert(e);
-                $("#context-here").html(e.reponseText);
-            }
-        });
+        B2CCore.get('controllers/catalog/getcatalog/' + type,  onSuccess, null, onError);
     };
 
 
+    renderPieCharts = function(){
+        $.each($('.piechart'), function(index, item) {
 
-    getCatalogItemTypes = function (){
-        $.ajax({
-            url: 'controllers/catalog/getcatalogitemtypes',
-            type: 'GET',
-            contentType: "application/json; charset=utf-8",
-            dataType: 'json',
-            data: null,
-            success: function(list){
+            var data =[ ['Target Number', parseInt($(item).attr('data-participantTargetNumber'))], [ 'Locked In', parseInt($(item).attr('data-currentParticipantNumber'))] ];
 
-                var mainTemplate = TemplateManager('Catalog', {list: list});
+            var plot1 = jQuery.jqplot (item.id, [data],
+                {
+                    seriesColors: ["#6495ED","#00FF00"],
+                    seriesDefaults: {
+                        // Make this a pie chart.
+                        renderer: jQuery.jqplot.PieRenderer,
+                        rendererOptions: {
+                            // Put data labels on the pie slices.
+                            // By default, labels show the percentage of the slice.
+                            showDataLabels: true
+                        }
+                    },
+                    legend: { show:false},
+                    grid:{  borderWidth: 0, shadow: false }
 
-                $el.html(mainTemplate);
+                }
+            );
+            $('#' + item.id).bind('jqplotDataHighlight', function(ev, seriesIndex, pointIndex, data) {
+                var $this = $(this);
 
-                getCatalog('Gloves');
+                $this.attr('title', data[0] + ": " + data[1]);
+            });
+            $('#' + item.id).bind('jqplotDataUnhighlight', function(ev, seriesIndex, pointIndex, data) {
+                var $this = $(this);
 
-            },
-            error: function(e){
-                alert(e);
-                $("#context-here").html(e.reponseText);
-            }
+                $this.attr('title', "");
+            });
+
+
         });
+
     };
 
-    getCatalogItemTypes();
+    onError = function(e){
+        alert(e);
+        $("#context-here").html(e.reponseText);
+    };
 
-};
+    getCatalogItemTypes = function ($el){
+        var success = function(list){
+            var mainTemplate = TemplateManager('Catalog', {list: list});
+            $el.html(mainTemplate);
+            addEvents();
+        };
+        B2CCore.get('controllers/catalog/getcatalogitemtypes', success, null, onError);
+    };
+
+    var convertJsonDataToNativeArray = function(data){
+        var array = [], count;
+
+        if (data != null && data.length > 0){
+            for (count = 0; count < data.length; count++){
+                array.push( {label:data[count].name, value:data[count].id, isOnCurrentDashboard:data[count].isOnCurrentDashboard});
+            }
+        }
+
+        return array;
+    }
+}

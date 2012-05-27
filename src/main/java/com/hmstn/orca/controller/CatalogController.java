@@ -58,4 +58,15 @@ public class CatalogController {
         }
     }
 
+    @RequestMapping(value="/searchcatalog/{searchtext}", method = RequestMethod.GET)
+    public @ResponseBody List<VendorProduct> searchCatalog(@PathVariable("searchtext") String searchtext) throws Exception{
+        try {
+            return catalogService.searchCatalog(searchtext);
+            //return new VendorProduct();
+        } catch (Exception ex) {
+            throw ex;
+        }
+    }
+
+
 }

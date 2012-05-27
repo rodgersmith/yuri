@@ -1,9 +1,12 @@
 package com.hmstn.orca.repository;
 
+import com.hmstn.orca.Utility.IMatcher;
+import com.hmstn.orca.Utility.Utility;
 import com.hmstn.orca.domain.Catalog;
 import com.hmstn.orca.domain.ItemType;
 import com.hmstn.orca.domain.Vendor;
 import com.hmstn.orca.domain.VendorProduct;
+import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.data.mongodb.core.MongoTemplate;
@@ -42,7 +45,7 @@ public class CatalogRepository {
 
         VendorProduct product = new VendorProduct();
         product.id = 1;
-        product.name = "Kimberly-Clark Purple Nitrile Exam Gloves Small 9-1/2 in";
+        product.name = "Kimberly-Clark Small Exam Gloves";
         product.description = "Purple Nitrile Exam GlovesPowder-free, ambidextrous gloves with textured fingertips contain no natural rubber latex. Beaded cuff 9.5\" length. 100 gloves per box.SmallPurple Customers also search for: Powder-Free; Kimberly-Clark,Healthcare,Exam Gloves,Powder Free,Nitrile,Purple,Exam Gloves,Kimberly-Clark,Kimberly Clark";
         product.qty = 100;
         product.standardPrice = 9.00;
@@ -52,6 +55,8 @@ public class CatalogRepository {
         product.participantTargetNumber = 35;
         product.currentParticipantNumber = 15;
         product.itemType = type;
+        product.offerCloseDate = DateTime.now().plusWeeks(3).toString("MM-dd-yyyy");
+        product.isOnCurrentDashboard = false;
 
         catalog.products.add(product);
 
@@ -61,7 +66,7 @@ public class CatalogRepository {
 
         product = new VendorProduct();
         product.id = 2;
-        product.name = "SafeTouch Nitrile Exam Gloves, Non Latex, Powder Free";
+        product.name = "SafeTouch Powder Free Exam Gloves";
         product.description = "The ideal solution for individuals sensitive to natural rubber latex and donning powder\n" +
                 "Contains no allergy causing natural rubber proteins\n" +
                 "Extraordinary strength and puncture resistance while maintaining tactile sensitivity\n" +
@@ -73,6 +78,8 @@ public class CatalogRepository {
         product.participantTargetNumber = 40;
         product.currentParticipantNumber = 10;
         product.itemType = type;
+        product.offerCloseDate = DateTime.now().plusWeeks(6).toString("MM-dd-yyyy");
+        product.isOnCurrentDashboard = true;
 
         catalog.products.add(product);
 
@@ -82,7 +89,7 @@ public class CatalogRepository {
 
         product = new VendorProduct();
         product.id = 3;
-        product.name = "Dynarex Black Nitrile Exam Gloves, Box/100";
+        product.name = "Dynarex Black Nitrile Exam Gloves";
         product.description = "The ideal solution for individuals sensitive to natural rubber latex and donning powder\n" +
                 "Contains no allergy causing natural rubber proteins\n" +
                 "Extraordinary strength and puncture resistance while maintaining tactile sensitivity\n" +
@@ -96,6 +103,8 @@ public class CatalogRepository {
         product.participantTargetNumber = 60;
         product.currentParticipantNumber = 40;
         product.itemType = type;
+        product.offerCloseDate = DateTime.now().plusWeeks(1).toString("MM-dd-yyyy");
+        product.isOnCurrentDashboard = false;
 
         catalog.products.add(product);
 
@@ -105,7 +114,7 @@ public class CatalogRepository {
 
         product = new VendorProduct();
         product.id = 4;
-        product.name = "SAS Safety 6609-20 Derma-Lite Powder Free Exam Grade Disposable Nitrile 5 Mil Gloves, Extra Large, 100 Gloves by Weight";
+        product.name = "SAS Safety Powder Free Exam Gloves";
         product.description = "Powder-free exam grade nitrile\n" +
                 "Super puncture and abrasion resistance\n" +
                 "Latex-free\n" +
@@ -119,6 +128,8 @@ public class CatalogRepository {
         product.participantTargetNumber = 55;
         product.currentParticipantNumber = 32;
         product.itemType = type;
+        product.offerCloseDate = DateTime.now().plusMonths(2).toString("MM-dd-yyyy");
+        product.isOnCurrentDashboard = false;
 
         catalog.products.add(product);
 
@@ -128,7 +139,7 @@ public class CatalogRepository {
 
         product = new VendorProduct();
         product.id = 5;
-        product.name = "Kimberly-Clark Purple Nitrile Exam Gloves Small 9-1/2 in";
+        product.name = "Kimberly-Clark Purple Gloves Small 9-1/2 in";
         product.description = "Purple Nitrile Exam GlovesPowder-free, ambidextrous gloves with textured fingertips contain no natural rubber latex. Beaded cuff 9.5\" length. 100 gloves per box.SmallPurple Customers also search for: Powder-Free; Kimberly-Clark,Healthcare,Exam Gloves,Powder Free,Nitrile,Purple,Exam Gloves,Kimberly-Clark,Kimberly Clark";
         product.qty = 100;
         product.standardPrice = 9.00;
@@ -138,6 +149,8 @@ public class CatalogRepository {
         product.participantTargetNumber = 35;
         product.currentParticipantNumber = 15;
         product.itemType = type;
+        product.offerCloseDate = DateTime.now().plusWeeks(2).toString("MM-dd-yyyy");
+        product.isOnCurrentDashboard = false;
 
         catalog.products.add(product);
 
@@ -147,7 +160,7 @@ public class CatalogRepository {
 
         product = new VendorProduct();
         product.id = 6;
-        product.name = "SafeTouch Nitrile Exam Gloves, Non Latex, Powder Free";
+        product.name = "SafeTouch Non Latex, Powder Free Gloves";
         product.description = "The ideal solution for individuals sensitive to natural rubber latex and donning powder\n" +
                 "Contains no allergy causing natural rubber proteins\n" +
                 "Extraordinary strength and puncture resistance while maintaining tactile sensitivity\n" +
@@ -160,6 +173,8 @@ public class CatalogRepository {
         product.participantTargetNumber = 35;
         product.currentParticipantNumber = 5;
         product.itemType = type;
+        product.offerCloseDate = DateTime.now().plusMonths(3).toString("MM-dd-yyyy");
+        product.isOnCurrentDashboard = true;
 
         catalog.products.add(product);
 
@@ -169,7 +184,7 @@ public class CatalogRepository {
 
         product = new VendorProduct();
         product.id = 7;
-        product.name = "Dynarex Black Nitrile Exam Gloves, Box/100";
+        product.name = "Dynarex Exam Gloves";
         product.description = "The ideal solution for individuals sensitive to natural rubber latex and donning powder\n" +
                 "Contains no allergy causing natural rubber proteins\n" +
                 "Extraordinary strength and puncture resistance while maintaining tactile sensitivity\n" +
@@ -183,6 +198,8 @@ public class CatalogRepository {
         product.participantTargetNumber = 35;
         product.currentParticipantNumber = 3;
         product.itemType = type;
+        product.offerCloseDate = DateTime.now().plusWeeks(3).toString("MM-dd-yyyy");
+        product.isOnCurrentDashboard = true;
 
         catalog.products.add(product);
 
@@ -192,7 +209,7 @@ public class CatalogRepository {
 
         product = new VendorProduct();
         product.id = 8;
-        product.name = "SAS Safety 6609-20 Derma-Lite Powder Free Exam Grade Disposable Nitrile 5 Mil Gloves, Extra Large, 100 Gloves by Weight";
+        product.name = "Derma-Lite Grade Disposable Nitrile";
         product.description = "Powder-free exam grade nitrile\n" +
                 "Super puncture and abrasion resistance\n" +
                 "Latex-free\n" +
@@ -206,6 +223,8 @@ public class CatalogRepository {
         product.participantTargetNumber = 40;
         product.currentParticipantNumber = 35;
         product.itemType = type;
+        product.offerCloseDate = DateTime.now().plusWeeks(2).toString("MM-dd-yyyy");
+        product.isOnCurrentDashboard = false;
 
         catalog.products.add(product);
 
@@ -216,7 +235,7 @@ public class CatalogRepository {
 
         product = new VendorProduct();
         product.id = 9;
-        product.name = "Kimberly-Clark Purple Nitrile Exam Gloves Small 9-1/2 in";
+        product.name = "KC Purple Nitrile Exam Gloves";
         product.description = "Purple Nitrile Exam GlovesPowder-free, ambidextrous gloves with textured fingertips contain no natural rubber latex. Beaded cuff 9.5\" length. 100 gloves per box.SmallPurple Customers also search for: Powder-Free; Kimberly-Clark,Healthcare,Exam Gloves,Powder Free,Nitrile,Purple,Exam Gloves,Kimberly-Clark,Kimberly Clark";
         product.qty = 100;
         product.standardPrice = 9.00;
@@ -226,6 +245,8 @@ public class CatalogRepository {
         product.participantTargetNumber = 40;
         product.currentParticipantNumber = 10;
         product.itemType = type;
+        product.offerCloseDate = DateTime.now().plusWeeks(8).toString("MM-dd-yyyy");
+        product.isOnCurrentDashboard = false;
 
         catalog.products.add(product);
 
@@ -235,7 +256,7 @@ public class CatalogRepository {
 
         product = new VendorProduct();
         product.id = 10;
-        product.name = "SafeTouch Nitrile Exam Gloves, Non Latex, Powder Free";
+        product.name = "Nitrile Exam Gloves, Non Latex";
         product.description = "The ideal solution for individuals sensitive to natural rubber latex and donning powder\n" +
                 "Contains no allergy causing natural rubber proteins\n" +
                 "Extraordinary strength and puncture resistance while maintaining tactile sensitivity\n" +
@@ -248,53 +269,14 @@ public class CatalogRepository {
         product.participantTargetNumber = 45;
         product.currentParticipantNumber = 35;
         product.itemType = type;
+        product.offerCloseDate = DateTime.now().plusWeeks(2).toString("MM-dd-yyyy");
+        product.isOnCurrentDashboard = false;
 
         catalog.products.add(product);
 
         vendor = new Vendor();
         vendor.id = 3;
         vendor.name = "Dynarex";
-
-        product = new VendorProduct();
-        product.id = 11;
-        product.name = "Dynarex Black Nitrile Exam Gloves, Box/100";
-        product.description = "The ideal solution for individuals sensitive to natural rubber latex and donning powder\n" +
-                "Contains no allergy causing natural rubber proteins\n" +
-                "Extraordinary strength and puncture resistance while maintaining tactile sensitivity\n" +
-                "Commonly used by law enforcement professionals\n" +
-                "1 box containes 100 ambidextrous gloves\n";
-        product.qty = 100;
-        product.standardPrice = 9.40;
-        product.targetPrice = 7.65;
-        product.vendor = vendor;
-        product.image = "../images/safeskin_gloves.jpg";
-        product.participantTargetNumber = 25;
-        product.currentParticipantNumber = 23;
-        product.itemType = type;
-
-        catalog.products.add(product);
-
-        vendor = new Vendor();
-        vendor.id = 4;
-        vendor.name = "SAS Safety Corporation";
-
-        product = new VendorProduct();
-        product.id = 12;
-        product.name = "SAS Safety 6609-20 Derma-Lite Powder Free Exam Grade Disposable Nitrile 5 Mil Gloves, Extra Large, 100 Gloves by Weight";
-        product.description = "Powder-free exam grade nitrile\n" +
-                "Super puncture and abrasion resistance\n" +
-                "Latex-free\n" +
-                "Textured grip\n" +
-                "Beaded cuff and ambidextrous";
-        product.qty = 100;
-        product.standardPrice = 14.29;
-        product.targetPrice = 12.00;
-        product.vendor = vendor;
-        product.image = "../images/gloves.jpg";
-        product.participantTargetNumber = 35;
-        product.currentParticipantNumber = 15;
-        product.itemType = type;
-
 
 
         catalog.products.add(product);
@@ -409,4 +391,21 @@ public class CatalogRepository {
 
         return itemTypes;
     }
+
+
+    public List<VendorProduct> searchCatalog (final String searchText) throws Exception {
+
+        List<VendorProduct> products = catalog.products;
+        List<VendorProduct> productList = Utility.searchIn(products, new IMatcher<VendorProduct>() {
+            public boolean matches(VendorProduct vendorProduct) throws Exception {
+                return vendorProduct.name.toLowerCase().contains(searchText.trim().toLowerCase());
+            }
+        });
+
+
+        return productList;
+    }
+
 }
+
+

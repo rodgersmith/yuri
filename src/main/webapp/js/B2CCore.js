@@ -1,26 +1,35 @@
-var tmpl_cache = {};
-var TemplateManager = function(tmpl_name, tmpl_data) {
+B2CCore = (function() {
+    var self = {}, ajax;
 
-    if ( ! tmpl_cache[tmpl_name] ) {
-        var tmpl_dir = '/templates';
-        var tmpl_url = tmpl_dir + '/' + tmpl_name + '.html';
+    self.post = function (url, success, options, errfn) {
+        var o = options || {};
+        o.verb = 'POST';
+        ajax(url, success, o, errfn);
+    };
 
-        var tmpl_string;
+    self.get = function (url, success, options, errfn) {
+        var o = options || {};
+        o.verb = 'GET';
+        ajax(url, success, o, errfn);
+    };
+
+    ajax = function(url, success, options, errorfn){
+        url = url || "";
+        url = url.charAt(0) === "/" ? url.substr(1) : url;
+
         $.ajax({
-            url: tmpl_url,
-            method: 'GET',
-            async: false,
-            success: function(data) {
-                tmpl_string = data;
-            }
+            url: url,
+            type:options.verb,
+            contentType: "application/json; charset=utf-8",
+            dataType: 'json',
+            data: null,
+            success: success,
+            errorfunc:errorfn
         });
+    };
 
-        tmpl_cache[tmpl_name] = _.template(tmpl_string);
-    }
-
-    return tmpl_cache[tmpl_name](tmpl_data);
-};
-
+    return self;
+}) ();
 
 FormatCurrency = function (num) {
         num = num.toString().replace(/\$|\,/g, '');
@@ -35,7 +44,11 @@ FormatCurrency = function (num) {
         return (((sign) ? '' : '-') + '$' + num + '.' + cents);
 };
 
-$('.dropdown-toggle').dropdown();
+
+
+
+
+
 
 
 

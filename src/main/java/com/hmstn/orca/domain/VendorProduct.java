@@ -2,6 +2,7 @@ package com.hmstn.orca.domain;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
+
 /**
  * Created with IntelliJ IDEA.
  * User: rodsmith
@@ -22,6 +23,9 @@ public class VendorProduct {
     public String image;
     public Integer participantTargetNumber;
     public Integer currentParticipantNumber;
+    public Boolean isOnCurrentDashboard;
+
+    public String offerCloseDate;
 
     public VendorProduct() {
         vendor = new Vendor();

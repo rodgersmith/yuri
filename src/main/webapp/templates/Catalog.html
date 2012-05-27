@@ -3,23 +3,25 @@
 
 
 <div class="row-fluid" style="margin-bottom: 10px;">
+
     <div class="span2">
         <div class="well sidebar-nav">
             <form class="form-search">
-                 <input type="text" class="input-medium search-query" placeholder="find an item" style="margin-right: 2px">
+                <input id="itemSearch" class=" search-query" placeholder="find an item" type="text"  style="margin-right: 2px; max-width: 140px;">
             </form>
 
-            <ul id="navlist" class="nav nav-list">
+            <ul id="navlist" class="nav nav-pills nav-stacked">
                 <% _.each(list, function(item) { %>
 
                 <li>
-                    <a id='<%= item.description %>'  href="#"><%= item.description %></a>
+                    <a id='<%= item.description %>'    href="#"><%= item.description %></a>
                 </li>
                 <% }) %>
 
             </ul>
         </div>
     </div>
+
     <div id="catalogList-Here" class="span10">
 
     </div>

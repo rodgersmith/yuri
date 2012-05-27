@@ -31,6 +31,8 @@ public class CatalogService {
         return catalogRepository.getCatalogItemTypes();
     }
 
-
+    public List<VendorProduct> searchCatalog(String searchText) throws Exception{
+        return catalogRepository.searchCatalog(searchText);
+    }
 
 }

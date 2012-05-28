@@ -11,3 +11,5 @@ B2C.BaseView.prototype.toggleMenu = function (menu) {
     $(".nav li").removeClass("active");
     $("." + menu).toggleClass("active", true);
 };
+
+

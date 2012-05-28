@@ -14,7 +14,7 @@
                 <% _.each(list, function(item) { %>
 
                 <li>
-                    <a id='<%= item.description %>'    href="#"><%= item.description %></a>
+                    <a id='<%= item.description.toLowerCase() %>'    href="#"><%= item.description %></a>
                 </li>
                 <% }) %>
 
@@ -26,3 +26,4 @@
 
     </div>
 </div>
+

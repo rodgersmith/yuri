@@ -1,57 +1,71 @@
 <div class="row-fluid">
-
+    <h2><%= data.name %></h2>
 </div>
 <div class="row-fluid">
-    <div class="span5">
-        <h2><%= data.name %></h2>
+    <div class="span3">
+
         <h3>By <%= data.vendor.name %></h3>
         <p><img src="<%= data.image %>" width="160" height="160"/></p>
 
+        <% if (data.isOnCurrentDashboard) { %>
+
+        <a class="btn btn-inverse" href="" style="float:left;">
+            View in Dashboard
+        </a>
+
+
+        <% } else { %>
+
+        <a class="btn" href="" style="float:left;">
+            Add to Dashboard
+        </a>
+
+        <% } %>
+
     </div>
-    <div class="span5">
-        <div style="width:250px; height:250px;" id="pie-<%= data.id %>"
+    <div class="span9">
+
+
+        <div style="width:150px; height:150px;" id="pie-<%= data.id %>"
              class="piechart"
              data-participantTargetNumber='<%= data.participantTargetNumber %>'
              data-currentParticipantNumber='<%= data.currentParticipantNumber %>"'>
         </div>
-    </div>
-    <div class="span2">
-        <a class="btn btn-primary" href="" style="float:left;">
-            Add to Dashboard
-        </a>
-    </div>
 
 
-    <div class="span10">
 
         <table class="table table-striped">
             <tr>
                 <td><h6>Closing Date:</h6></td>
-                <td> <%= data.offerCloseDate %></td>
+                <td><%= data.offerCloseDate %></td>
             </tr>
             <tr>
                 <td><h6>Quantity Per Unit:</h6></td>
-                <td> <%= data.qty %></td>
-            </tr>
-            <tr>
-                <td><h6>Standard Price:</h6></td>
-                <td> <%= FormatCurrency(data.standardPrice) %></td>
+                <td><%= data.qty %></td>
             </tr>
             <tr>
                 <td><h6>Target Price:</h6></td>
-                <td> <%= FormatCurrency(data.targetPrice) %></td>
+                <td><%= FormatCurrency(data.targetPrice) %></td>
             </tr>
             <tr>
-                <td><h6>Target Number of Participants:</h6></td>
-                <td> <%= data.participantTargetNumber %></td>
+                <td><h6>Standard Price:</h6></td>
+                <td><%= FormatCurrency(data.standardPrice) %></td>
             </tr>
             <tr>
-                <td><h6>Current Number of Participants:</h6></td>
-                <td> <%= data.currentParticipantNumber %></td>
+                <td><h6>Shipping Cost:</h6></td>
+                <td><%= FormatCurrency(data.shippingCost) %></td>
+            </tr>
+            <tr>
+                <td><h6>Target Number:</h6></td>
+                <td><%= data.participantTargetNumber %> Participants</td>
+            </tr>
+            <tr>
+                <td><h6>Current Number:</h6></td>
+                <td><%= data.currentParticipantNumber %> Participants</td>
             </tr>
             <tr>
                 <td><h6>Description:</h6></td>
-                <td> <%= data.description %></td>
+                <td><%= data.description %></td>
             </tr>
 
         </table>

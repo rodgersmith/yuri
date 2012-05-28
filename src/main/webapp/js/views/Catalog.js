@@ -5,13 +5,14 @@
  * Time: 9:36 PM
  * To change this template use File | Settings | File Templates.
  */
-B2C.Catalog = function() {
+B2C.Catalog = function(itemType, itemId) {
     var self = new B2C.BaseView(),
     getCatalog, getCatalogItemTypes, renderPieCharts, items, addEvents, onError;
 
     B2C.Catalog.prototype.init = function ($el) {
         self.toggleMenu("catalog");
         getCatalogItemTypes($el);
+
     };
 
     addEvents = function() {
@@ -43,7 +44,7 @@ B2C.Catalog = function() {
 
             },
             select : function(event, ui) {
-                if (ui.item.isOnCurrentDashboard){
+                if (!ui.item.isOnCurrentDashboard){
                     window.location = "#catalogItem/" + ui.item.value;
                 }
             },
@@ -59,6 +60,10 @@ B2C.Catalog = function() {
     getCatalog = function(type){
 
         var onSuccess = function(data){
+
+            $('#' + itemType).parent('li').addClass("active");
+
+            ee.emit("catalogTypeChosen", type);
 
             var html = TemplateManager('CatalogList', {data:data.products});
 
@@ -126,6 +131,16 @@ B2C.Catalog = function() {
             var mainTemplate = TemplateManager('Catalog', {list: list});
             $el.html(mainTemplate);
             addEvents();
+            if (itemId){
+                var view = B2C.CatalogItem(itemId);
+                view.render();
+                $('#' + itemType).parent('li').addClass("active");
+            } else {
+                if (itemType){
+                    getCatalog(itemType);
+                }
+            }
+
         };
         B2CCore.get('controllers/catalog/getcatalogitemtypes', success, null, onError);
     };

@@ -57,6 +57,8 @@ public class CatalogRepository {
         product.itemType = type;
         product.offerCloseDate = DateTime.now().plusWeeks(3).toString("MM-dd-yyyy");
         product.isOnCurrentDashboard = false;
+        product.shippingCost = 4.00;
+        product.unitCost = 0.30;
 
         catalog.products.add(product);
 
@@ -80,6 +82,8 @@ public class CatalogRepository {
         product.itemType = type;
         product.offerCloseDate = DateTime.now().plusWeeks(6).toString("MM-dd-yyyy");
         product.isOnCurrentDashboard = true;
+        product.shippingCost = 3.00;
+        product.unitCost = 0.30;
 
         catalog.products.add(product);
 
@@ -105,6 +109,8 @@ public class CatalogRepository {
         product.itemType = type;
         product.offerCloseDate = DateTime.now().plusWeeks(1).toString("MM-dd-yyyy");
         product.isOnCurrentDashboard = false;
+        product.shippingCost = 4.00;
+        product.unitCost = 0.30;
 
         catalog.products.add(product);
 
@@ -130,6 +136,8 @@ public class CatalogRepository {
         product.itemType = type;
         product.offerCloseDate = DateTime.now().plusMonths(2).toString("MM-dd-yyyy");
         product.isOnCurrentDashboard = false;
+        product.shippingCost = 4.00;
+        product.unitCost = 0.30;
 
         catalog.products.add(product);
 
@@ -151,6 +159,8 @@ public class CatalogRepository {
         product.itemType = type;
         product.offerCloseDate = DateTime.now().plusWeeks(2).toString("MM-dd-yyyy");
         product.isOnCurrentDashboard = false;
+        product.shippingCost = 4.00;
+        product.unitCost = 0.30;
 
         catalog.products.add(product);
 
@@ -175,6 +185,8 @@ public class CatalogRepository {
         product.itemType = type;
         product.offerCloseDate = DateTime.now().plusMonths(3).toString("MM-dd-yyyy");
         product.isOnCurrentDashboard = true;
+        product.shippingCost = 4.00;
+        product.unitCost = 0.30;
 
         catalog.products.add(product);
 
@@ -200,6 +212,8 @@ public class CatalogRepository {
         product.itemType = type;
         product.offerCloseDate = DateTime.now().plusWeeks(3).toString("MM-dd-yyyy");
         product.isOnCurrentDashboard = true;
+        product.shippingCost = 4.00;
+        product.unitCost = 0.30;
 
         catalog.products.add(product);
 
@@ -225,6 +239,8 @@ public class CatalogRepository {
         product.itemType = type;
         product.offerCloseDate = DateTime.now().plusWeeks(2).toString("MM-dd-yyyy");
         product.isOnCurrentDashboard = false;
+        product.shippingCost = 4.00;
+        product.unitCost = 0.30;
 
         catalog.products.add(product);
 
@@ -247,6 +263,8 @@ public class CatalogRepository {
         product.itemType = type;
         product.offerCloseDate = DateTime.now().plusWeeks(8).toString("MM-dd-yyyy");
         product.isOnCurrentDashboard = false;
+        product.shippingCost = 4.00;
+        product.unitCost = 0.30;
 
         catalog.products.add(product);
 
@@ -271,6 +289,8 @@ public class CatalogRepository {
         product.itemType = type;
         product.offerCloseDate = DateTime.now().plusWeeks(2).toString("MM-dd-yyyy");
         product.isOnCurrentDashboard = false;
+        product.shippingCost = 4.00;
+        product.unitCost = 0.30;
 
         catalog.products.add(product);
 
@@ -293,7 +313,7 @@ public class CatalogRepository {
 
         for( VendorProduct product : catalog.products )
         {
-            if ((product.itemType.description.equals(type)))
+            if ((product.itemType.description.toLowerCase().equals(type.toLowerCase())))
             {
                 returnval.products.add(product);
             }

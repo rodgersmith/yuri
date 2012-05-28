@@ -7,14 +7,21 @@
  */
 //namespace
 B2C = {};
+var ee = new EventEmitter();
 
 $(function () {
-
+    var catalogType;
     B2C.clearAlerts = function() {
         $("alerts-here").html('');
     };
 
     var $el = $("#main-here");
+
+
+    ee.addListener("catalogTypeChosen",function(type){
+        catalogType = type;
+    });
+
 
     B2C.B2CController = Backbone.Router.extend({
         routes: {
@@ -39,12 +46,12 @@ $(function () {
 
         catalog: function(){
             B2C.clearAlerts();
-            new B2C.Catalog().init($el);
+            new B2C.Catalog(catalogType).init($el);
         },
 
         catalogItem: function(itemId){
             B2C.clearAlerts();
-            new B2C.CatalogItem(itemId).init($el);
+            new B2C.Catalog(catalogType, itemId).init($el);
         },
 
         dashboard: function(){

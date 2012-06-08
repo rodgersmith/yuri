@@ -1,0 +1,30 @@
+<ul  style="list-style-type: none; padding:0">
+    <% _.each(list, function(item) { %>
+    <li id="thumbnail-<%= item.id %>" >
+        <div class="thumbnail small-font center " style="margin-bottom: 10px; width:250px; height:140px;">
+            <div class="label small-font <%= getThumbnailLabelClass(item) %>"  style="width:245px;" title='<%= item.name %>' ><%= item.name.elips(50) %></div>
+            <div class="row-fluid">
+                <div class="span6">
+                    <div style="width:130px; height:130px;" id="pie-<%= item.id %>"
+                         class="piechart"
+                         data-currentParticipantNumber='<%= item.currentParticipantNumber %>'
+                         data-participantTargetDiff = '<%= item.participantTargetDiff %>'>
+                    </div>
+                </div>
+                <div class="span6  small-font center thumbnailspan" >  <br><br>
+                    Category Type: <%= item.itemType.description %> <br>
+                    Target Number: <%= item.participantTargetNumber %> <br>
+                    Target Price: <%= FormatCurrency(item.targetPrice) %> <br>
+                    Days Remaining: <%= item.daysRemainingOnOffer %> <br>
+                    Qty Ordered: <%= item.qtyOrdered %> <br>
+                    Qty Per Unit: <%= item.qty %>
+                </div>
+            </div>
+
+
+
+        </div>
+
+    </li>
+    <% }) %>
+</ul>

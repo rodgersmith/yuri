@@ -185,35 +185,6 @@ public class Utility {
         return buffer.toString();
     }
 
-    // Db returns dose as "10mg" i.e Dose + UOM. Following functions extracts Dose value.
-    static public Double toUnitDose(String source) {
-        StringBuffer buffer = new StringBuffer();
-        if (source != null) {
-            for (Integer index = 0; index < source.length(); index++) {
-                if (Character.isDigit(source.charAt(index)) || source.charAt(index) == '.') {
-                    buffer.append(source.charAt(index));
-                } else {
-                    break;
-                }
-            }
-        }
-        if (buffer.length() == 0) buffer.append("0");
-        return Double.parseDouble(buffer.toString());
-    }
-
-    // Db returns dose as "10mg" i.e Dose + UOM. Following functions extracts UOM value.
-    static public String toUnitOfMeasure(String source) {
-        StringBuffer buffer = new StringBuffer();
-        if (source != null) {
-            for (Integer index = 0; index < source.length(); index++) {
-                if (Character.isLetter(source.charAt(index))) {
-                    buffer.append(source.charAt(index));
-                }
-            }
-        }
-        if (buffer.length() == 0) buffer.append("");
-        return buffer.toString();
-    }
 
     static public Boolean toBoolean(String value) {
         if (value == null) return false;
@@ -264,106 +235,11 @@ public class Utility {
         return value.trim();
     }
 
-    public static String getUnitOfMeasure(String unit, String time) {
-        String result = "";
-        if (unit != null && unit.trim().length() > 0) {
-            if (time == null || time.trim().length() == 0) {
-                result = unit;
-            } else {
-                result = unit + "/" + time;
-            }
-        }
-        return result;
-    }
-
     static public String toUpper(String value) {
         if (value == null) return "";
         return value.toUpperCase();
     }
 
-    static private String[] exceptionList = {
-            "ABG", "CH50", "HDLC", "RMSF", "NRBC", "CPAP",
-            "ABO", "CK", "HGB", "RSV", "MCH", "CTCO2",
-            "RH", "CKMB", "HIV", "SHBG", "MCHC", "FIO2",
-            "ABID", "CPK", "HLAB27", "TCA", "MCV", "HCO3",
-            "ABS", "CMP", "HSV", "TIBC", "MPV",
-            "ACTH", "COPD", "IGG", "TSH", "PLT",
-            "ADH", "CO2", "IGA", "TSI", "PT",
-            "ALT", "CRP", "INR", "VMA", "RA",
-            "ANA", "CSF", "K", "WBC", "RBC",
-            "ASO", "DHEA", "LDH", "COPD", "RDW",
-            "AST", "EBV", "LDL", "CPR", "SGOT",
-            "BCR", "EKG", "LH", "AFP", "SGPT",
-            "BMP", "TIBC", "LSD", "AFB", "UA",
-            "BNP", "FFP", "MMR", "A1A", "PH",
-            "BUN", "PSA", "NAPA", "FLU A", "WBC",
-            "B12", "FSH", "PCP", "FLU B", "VLDL",
-            "CA125", "FTA", "PCR", "DNA", "ABG", "PH",
-            "CA199", "GFR", "PSA", "HBV", "BEP",
-            "CA2729", "GGT", "PTH", "HCG", "BG",
-            "CBC", "GTT", "PTT", "HEPC", "BLD GAS",
-            "CD4", "H & H", "RBC", "HGBA1C", "O2SAT",
-            "CD8", "HCT", "RH", "IGE", "PCO2",
-            "CEA", "HCV", "RNP", "IGM", "PO2",
-            "CH100", "HDL", "RPR", "LHDL", "HCO3", "RA"};
-
-    public static void alwaysCapitalize(StringBuilder buffer) {
-        String copy = buffer.toString().toUpperCase();
-        Integer copyLength = copy.length();
-        for (String word : exceptionList) {
-            for (Integer offset = copy.indexOf(word); offset >= 0; offset = copy.indexOf(word, offset + word.length())) {
-                if (offset == 0 || !Character.isLetterOrDigit(copy.charAt(offset - 1))) {
-                    Integer test = offset + word.length();
-                    if (test == copyLength || !Character.isLetterOrDigit(copy.charAt(test))) {
-                        // Word found - replace it with uppercase word
-                        buffer.replace(offset, test, word);
-                    }
-                }
-            }
-        }
-    }
-
-    public static String toSentence(String value) {
-        if (value == null) value = "";
-        value = trimString(value);
-        if (isAllUpper(value)) value = value.toLowerCase();
-        StringBuilder builder = new StringBuilder(value);
-        Boolean isFirst = true;
-        for (int index = 0; index < builder.length(); index++) {
-            if (Character.isLetterOrDigit(builder.charAt(index))) {
-                if (isFirst) {
-                    isFirst = false;
-                    builder.setCharAt(index, Character.toUpperCase(builder.charAt(index)));
-                }
-            } else {
-                if (builder.charAt(index) == '.') {
-                    isFirst = true;
-                }
-            }
-        }
-        alwaysCapitalize(builder);
-        return builder.toString();
-    }
-
-    public static String toProperCase(String value) {
-        if (value == null) value = "";
-        value = trimString(value);
-        if (isAllUpper(value)) value = value.toLowerCase();
-        StringBuilder builder = new StringBuilder(value);
-        Boolean isFirst = true;
-        for (int index = 0; index < builder.length(); index++) {
-            if (Character.isLetterOrDigit(builder.charAt(index))) {
-                if (isFirst) {
-                    isFirst = false;
-                    builder.setCharAt(index, Character.toUpperCase(builder.charAt(index)));
-                }
-            } else {
-                isFirst = true;
-            }
-        }
-        alwaysCapitalize(builder);
-        return builder.toString();
-    }
 
     public static Boolean convertToBoolean(String value) {
         return value != null && value.trim().toUpperCase().equals("Y");
@@ -379,15 +255,6 @@ public class Utility {
             return 1;
         } else {
             return 0;
-        }
-    }
-
-    public static String makeHrsMin(BigDecimal timedta) {
-        if (timedta != null && timedta.compareTo(BigDecimal.ZERO) > 0) {   // "0:00"
-            String val = String.format("%-3d", timedta.intValue());
-            return val.substring(0, val.length() - 2) + "." + val.substring(val.length() - 2);
-        } else {
-            return "";
         }
     }
 
@@ -409,6 +276,7 @@ public class Utility {
         if (result == null) result = new DateTime(0);
         return result;
     }
+
 
     public static DateTime toDateTime(DateTime value, Integer timePart, String format) {
         DateTime result = makeDateTime(value, timePart, format);

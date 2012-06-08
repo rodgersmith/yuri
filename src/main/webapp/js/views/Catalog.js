@@ -86,7 +86,7 @@ B2C.Catalog = function(itemType, itemId) {
     renderPieCharts = function(){
         $.each($('.piechart'), function(index, item) {
 
-            var data =[ ['Target Number', parseInt($(item).attr('data-participantTargetNumber'))], [ 'Locked In', parseInt($(item).attr('data-currentParticipantNumber'))] ];
+            var data =[ ['Remaining Orders', parseInt($(item).attr('data-participantTargetDiff'))], [ 'Locked In', parseInt($(item).attr('data-currentParticipantNumber'))] ];
 
             var plot1 = jQuery.jqplot (item.id, [data],
                 {

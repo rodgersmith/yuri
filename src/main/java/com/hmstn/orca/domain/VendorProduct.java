@@ -23,10 +23,12 @@ public class VendorProduct {
     public String image;
     public Integer participantTargetNumber;
     public Integer currentParticipantNumber;
+    public Integer participantTargetDiff;
     public Boolean isOnCurrentDashboard;
     public double shippingCost;
     public double unitCost;
     public String offerCloseDate;
+    public int daysRemainingOnOffer;
 
     public VendorProduct() {
         vendor = new Vendor();

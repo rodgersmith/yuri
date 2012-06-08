@@ -10,7 +10,7 @@ B2C = {};
 var ee = new EventEmitter();
 
 $(function () {
-    var catalogType;
+    var catalogType, dashboardsortType;
     B2C.clearAlerts = function() {
         $("alerts-here").html('');
     };
@@ -22,6 +22,9 @@ $(function () {
         catalogType = type;
     });
 
+    ee.addListener("dashboardSort",function(type){
+        dashboardsortType = type;
+    });
 
     B2C.B2CController = Backbone.Router.extend({
         routes: {
@@ -31,7 +34,8 @@ $(function () {
             "catalogItem/:itemId" : "catalogItem",
             "dashboard" : "dashboard",
             "vendorportal": "vendorportal",
-            "login": "login"
+            "login": "login",
+            "dashboardItem/:id" : "dashboardItem"
         },
 
         index: function(){
@@ -56,7 +60,12 @@ $(function () {
 
         dashboard: function(){
             B2C.clearAlerts();
-            new B2C.Dashboard().init($el);
+            new B2C.Dashboard(1).init($el);
+        },
+
+        dashboardItem: function(itemId){
+            B2C.clearAlerts();
+            new B2C.Dashboard(1, dashboardsortType,itemId).init($el);
         },
 
         vendorportal: function(){

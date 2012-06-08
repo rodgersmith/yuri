@@ -44,6 +44,16 @@ FormatCurrency = function (num) {
         return (((sign) ? '' : '-') + '$' + num + '.' + cents);
 };
 
+String.prototype.elips = function (maxLen) {
+
+    var textLen = this.length;
+    if (textLen > maxLen && textLen > 4) {
+        var txt = this.substring(0, maxLen - 4) + " ...";
+        return txt;
+    }
+    return this;
+};
+
 
 
 

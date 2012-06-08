@@ -7,13 +7,14 @@ import com.hmstn.orca.domain.VendorProduct;
 import com.hmstn.orca.repository.CatalogRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 
 @Service
-@Scope(value="request")
+@Scope(value = "request", proxyMode = ScopedProxyMode.TARGET_CLASS)
 public class CatalogService {
 
     @Autowired

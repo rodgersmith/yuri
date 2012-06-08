@@ -2,10 +2,7 @@ package com.hmstn.orca.repository;
 
 import com.hmstn.orca.Utility.IMatcher;
 import com.hmstn.orca.Utility.Utility;
-import com.hmstn.orca.domain.Catalog;
-import com.hmstn.orca.domain.ItemType;
-import com.hmstn.orca.domain.Vendor;
-import com.hmstn.orca.domain.VendorProduct;
+import com.hmstn.orca.domain.*;
 import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
@@ -27,13 +24,19 @@ import java.util.List;
 @Scope(value="request")
 public class CatalogRepository {
 
+    @Autowired
+    MongoTemplate mongoTemplate;
     private Catalog catalog = new Catalog();
 
+
     public CatalogRepository(){
-        loadRepo();
+
+        loadCatalog();
     }
 
-    private void loadRepo(){
+
+
+    private void loadCatalog(){
 
         ItemType type = new ItemType();
         type.key = 10;
@@ -303,8 +306,6 @@ public class CatalogRepository {
     }
 
 
-    @Autowired
-    MongoTemplate mongoTemplate;
 
     public Catalog getCatalogByType(String type) throws Exception {
 //        Catalog results = mongoTemplate.find(Catalog.class);
@@ -315,6 +316,7 @@ public class CatalogRepository {
         {
             if ((product.itemType.description.toLowerCase().equals(type.toLowerCase())))
             {
+                product.participantTargetDiff = product.participantTargetNumber - product.currentParticipantNumber;
                 returnval.products.add(product);
             }
         }
@@ -323,10 +325,13 @@ public class CatalogRepository {
     }
 
 
+
+
     public VendorProduct getCatalogItem (Integer id) throws Exception
     {
         for (VendorProduct product : catalog.products){
             if (product.id.equals(id)){
+                product.participantTargetDiff = product.participantTargetNumber - product.currentParticipantNumber;
                 return product;
             }
         }
@@ -421,6 +426,10 @@ public class CatalogRepository {
                 return vendorProduct.name.toLowerCase().contains(searchText.trim().toLowerCase());
             }
         });
+        for(VendorProduct product: productList)
+        {
+            product.participantTargetDiff = product.participantTargetNumber - product.currentParticipantNumber;
+        }
 
 
         return productList;

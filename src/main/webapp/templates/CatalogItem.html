@@ -28,8 +28,8 @@
 
         <div style="width:150px; height:150px;" id="pie-<%= data.id %>"
              class="piechart"
-             data-participantTargetNumber='<%= data.participantTargetNumber %>'
-             data-currentParticipantNumber='<%= data.currentParticipantNumber %>"'>
+             data-currentParticipantNumber='<%= data.currentParticipantNumber %>'
+             data-participantTargetDiff='<%= data.participantTargetDiff %>"'>
         </div>
 
 
@@ -38,6 +38,10 @@
             <tr>
                 <td><h6>Closing Date:</h6></td>
                 <td><%= data.offerCloseDate %></td>
+            </tr>
+            <tr>
+                <td><h6>Participant Target Number:</h6></td>
+                <td><%= data.participantTargetNumber %></td>
             </tr>
             <tr>
                 <td><h6>Quantity Per Unit:</h6></td>

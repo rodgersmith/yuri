@@ -65,6 +65,24 @@
           <scope>test</scope>
       </dependency>
 
+      <dependency>
+          <groupId>joda-time</groupId>
+          <artifactId>joda-time</artifactId>
+          <version>2.0</version>
+          <scope>compile</scope>
+      </dependency>
+      <dependency>
+          <groupId>com.google.guava</groupId>
+          <artifactId>guava</artifactId>
+          <version>10.0.1</version>
+      </dependency>
+      <dependency>
+          <groupId>org.joda</groupId>
+          <artifactId>joda-convert</artifactId>
+          <version>1.1</version>
+          <scope>compile</scope>
+      </dependency>
+
   </dependencies>
   <build>
     <finalName>ORCA</finalName>

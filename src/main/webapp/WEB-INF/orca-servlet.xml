@@ -14,11 +14,8 @@
         http://www.springframework.org/schema/security/spring-security-3.1.xsd">
 
     <!-- Scans the classpath of this application for @Components to deploy as beans -->
-    <context:component-scan base-package="com.hmstn.orca" scoped-proxy="targetClass" />
-
-    <!-- Configures the @Controller programming model -->
-    <mvc:annotation-driven />
-
+    <context:component-scan base-package="com.hmstn"/>
+    <mvc:annotation-driven/>
     <!-- Configure security -->
     <security:http pattern="/css/**" security="none"/>
 

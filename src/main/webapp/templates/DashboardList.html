@@ -11,13 +11,13 @@
                          data-participantTargetDiff = '<%= item.participantTargetDiff %>'>
                     </div>
                 </div>
-                <div class="span6  small-font center thumbnailspan" >  <br><br>
+                <div class="span6  small-font center thumbnailspan" >  <br>
+                    <h6> <%= item.orderStatus %> </h6>
                     Category Type: <%= item.itemType.description %> <br>
                     Target Number: <%= item.participantTargetNumber %> <br>
                     Target Price: <%= FormatCurrency(item.targetPrice) %> <br>
                     Days Remaining: <%= item.daysRemainingOnOffer %> <br>
                     Qty Ordered: <%= item.qtyOrdered %> <br>
-                    Qty Per Unit: <%= item.qty %>
                 </div>
             </div>
 

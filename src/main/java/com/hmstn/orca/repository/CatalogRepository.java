@@ -2,6 +2,7 @@ package com.hmstn.orca.repository;
 
 import com.hmstn.orca.Utility.IMatcher;
 import com.hmstn.orca.Utility.Utility;
+import com.hmstn.orca.Utility.VendorProductUtility;
 import com.hmstn.orca.domain.*;
 import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -316,7 +317,8 @@ public class CatalogRepository {
         {
             if ((product.itemType.description.toLowerCase().equals(type.toLowerCase())))
             {
-                product.participantTargetDiff = product.participantTargetNumber - product.currentParticipantNumber;
+                product.participantTargetDiff = VendorProductUtility.calculateTargetDiff(product);
+                product.orderStatus = VendorProductUtility.getItemStatus(product);
                 returnval.products.add(product);
             }
         }
@@ -331,7 +333,8 @@ public class CatalogRepository {
     {
         for (VendorProduct product : catalog.products){
             if (product.id.equals(id)){
-                product.participantTargetDiff = product.participantTargetNumber - product.currentParticipantNumber;
+                product.participantTargetDiff = VendorProductUtility.calculateTargetDiff(product);
+                product.orderStatus = VendorProductUtility.getItemStatus(product);
                 return product;
             }
         }
@@ -428,7 +431,8 @@ public class CatalogRepository {
         });
         for(VendorProduct product: productList)
         {
-            product.participantTargetDiff = product.participantTargetNumber - product.currentParticipantNumber;
+            product.participantTargetDiff =   VendorProductUtility.calculateTargetDiff(product);
+            product.orderStatus = VendorProductUtility.getItemStatus(product);
         }
 
 

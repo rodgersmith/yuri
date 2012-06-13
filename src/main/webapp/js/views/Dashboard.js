@@ -21,7 +21,6 @@ B2C.Dashboard = function(customerId, sortType, itemId){
 
         getDashboardInventory(customerId);
 
-
         $('.dropdown-toggle').dropdown();
         $('.dropdown-menu a').live('click',function() {
             var that = $(this).text();
@@ -30,8 +29,6 @@ B2C.Dashboard = function(customerId, sortType, itemId){
 
         });
     };
-
-
 
     sortDashboardInventory = function(sort){
          var list = [];
@@ -44,15 +41,15 @@ B2C.Dashboard = function(customerId, sortType, itemId){
                  break;
              case "Current-to-Target Ratio":
                  list = _.sortBy(inventoryList, function(item){
-                     return (item.currentParticipantNumber / item.participantTargetNumber) * 100;
+                     return (item.currentParticipantNumber / item.participantTargetDiff) * 100;
                  });
-
+                 list.reverse();
                  break;
              case "Days Remaining On Offer":
                  list = _.sortBy(inventoryList, function(item){
                      return item.daysRemainingOnOffer;
                  });
-                 list.reverse();
+
                  break;
 
          }
@@ -68,7 +65,8 @@ B2C.Dashboard = function(customerId, sortType, itemId){
                 $("#dashboardItem-sort-title").text(sortType);
                 sortDashboardInventory(sortType);
             } else{
-                renderList(inventoryList);
+                $("#dashboardItem-sort-title").text("Current-to-Target Ratio");
+                sortDashboardInventory("Current-to-Target Ratio");
             }
         };
 
@@ -100,7 +98,6 @@ B2C.Dashboard = function(customerId, sortType, itemId){
             id = selectedItem.attr("id");
             index = id.indexOf("-");
             id = id.substr(index + 1);
-
 
             window.location = "#dashboardItem/" + id;
         });
@@ -155,13 +152,16 @@ B2C.Dashboard = function(customerId, sortType, itemId){
 
     getThumbnailLabelClass = function( item ){
 
-        if (item.daysRemainingOnOffer === 0){
+        if (item.orderStatus === "Open"){
+            return "label-warning";
+        }
+        if (item.orderStatus === "Elapsed"){
             return "label-info";
         }
-        if (item.participantTargetDiff === 0){
+        if (item.orderStatus === "Success"){
             return "label-success";
         }
-        return "label-warning"
+
     }
 
 };

@@ -4,38 +4,57 @@
     <bookmark url="file://$PROJECT_DIR$/src/main/webapp/js/views/CatalogItem.js" line="7" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="233a1291-c10a-4c68-a68b-bf58229ec71c" name="Default" comment="rjs">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_findbugs_jsr305_1_3_9.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_10_0_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__joda_time_joda_time_2_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_joda_joda_convert_1_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/hmstn/orca/controller/DashboardController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/hmstn/orca/domain/DashboardInventory.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/hmstn/orca/domain/DashboardVendorProduct.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/hmstn/orca/repository/DashboardRepository.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/hmstn/orca/service/DashboardService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/views/Dashboard.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/templates/Dashboard.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/templates/DashboardList.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/ORCA_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/ORCA_war_exploded.xml" />
+    <list default="true" id="233a1291-c10a-4c68-a68b-bf58229ec71c" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/hmstn/orca/Enum/DashboardItemStatus.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/hmstn/orca/Utility/VendorProductUtility.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ORCA.war" afterPath="$PROJECT_DIR$/target/ORCA.war" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ORCA/WEB-INF/classes/com/hmstn/orca/controller/CatalogController.class" afterPath="$PROJECT_DIR$/target/ORCA/WEB-INF/classes/com/hmstn/orca/controller/CatalogController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ORCA/WEB-INF/classes/com/hmstn/orca/domain/Vendor.class" afterPath="$PROJECT_DIR$/target/ORCA/WEB-INF/classes/com/hmstn/orca/domain/Vendor.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ORCA/WEB-INF/classes/com/hmstn/orca/domain/VendorProduct.class" afterPath="$PROJECT_DIR$/target/ORCA/WEB-INF/classes/com/hmstn/orca/domain/VendorProduct.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ORCA/WEB-INF/classes/com/hmstn/orca/repository/CatalogRepository.class" afterPath="$PROJECT_DIR$/target/ORCA/WEB-INF/classes/com/hmstn/orca/repository/CatalogRepository.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ORCA/WEB-INF/classes/com/hmstn/orca/service/CatalogService.class" afterPath="$PROJECT_DIR$/target/ORCA/WEB-INF/classes/com/hmstn/orca/service/CatalogService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/hmstn/orca/controller/CatalogController.class" afterPath="$PROJECT_DIR$/target/classes/com/hmstn/orca/controller/CatalogController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/hmstn/orca/domain/Vendor.class" afterPath="$PROJECT_DIR$/target/classes/com/hmstn/orca/domain/Vendor.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/hmstn/orca/domain/VendorProduct.class" afterPath="$PROJECT_DIR$/target/classes/com/hmstn/orca/domain/VendorProduct.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/hmstn/orca/repository/CatalogRepository.class" afterPath="$PROJECT_DIR$/target/classes/com/hmstn/orca/repository/CatalogRepository.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/hmstn/orca/service/CatalogService.class" afterPath="$PROJECT_DIR$/target/classes/com/hmstn/orca/service/CatalogService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ORCA.iml" afterPath="$PROJECT_DIR$/ORCA.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/hmstn/orca/Utility/Utility.java" afterPath="$PROJECT_DIR$/src/main/java/com/hmstn/orca/Utility/Utility.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/hmstn/orca/domain/DashboardVendorProduct.java" afterPath="$PROJECT_DIR$/src/main/java/com/hmstn/orca/domain/DashboardVendorProduct.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/hmstn/orca/domain/VendorProduct.java" afterPath="$PROJECT_DIR$/src/main/java/com/hmstn/orca/domain/VendorProduct.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/hmstn/orca/repository/CatalogRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/hmstn/orca/repository/CatalogRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/hmstn/orca/service/CatalogService.java" afterPath="$PROJECT_DIR$/src/main/java/com/hmstn/orca/service/CatalogService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/orca-servlet.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/orca-servlet.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/css/less/bootstrap.less" afterPath="$PROJECT_DIR$/src/main/webapp/css/less/bootstrap.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/css/less/main.less" afterPath="$PROJECT_DIR$/src/main/webapp/css/less/main.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/css/less/variables.less" afterPath="$PROJECT_DIR$/src/main/webapp/css/less/variables.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/js/App_Config.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/App_Config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/js/B2CCore.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/B2CCore.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/js/views/Catalog.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/views/Catalog.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/js/views/CatalogItem.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/views/CatalogItem.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/templates/Catalog.html" afterPath="$PROJECT_DIR$/src/main/webapp/templates/Catalog.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/templates/CatalogItem.html" afterPath="$PROJECT_DIR$/src/main/webapp/templates/CatalogItem.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/hmstn/orca/repository/DashboardRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/hmstn/orca/repository/DashboardRepository.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/js/views/Dashboard.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/views/Dashboard.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/templates/Dashboard.html" afterPath="$PROJECT_DIR$/src/main/webapp/templates/Dashboard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/templates/DashboardList.html" afterPath="$PROJECT_DIR$/src/main/webapp/templates/DashboardList.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ORCA/WEB-INF/mongo-config.xml" afterPath="$PROJECT_DIR$/target/ORCA/WEB-INF/mongo-config.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ORCA/WEB-INF/orca-servlet.xml" afterPath="$PROJECT_DIR$/target/ORCA/WEB-INF/orca-servlet.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ORCA/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/target/ORCA/WEB-INF/web.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ORCA/css/less/bootstrap.less" afterPath="$PROJECT_DIR$/target/ORCA/css/less/bootstrap.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ORCA/css/less/variables.less" afterPath="$PROJECT_DIR$/target/ORCA/css/less/variables.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ORCA/dependencies/controls/jqgrid/i18n/grid.locale-en.js" afterPath="$PROJECT_DIR$/target/ORCA/dependencies/controls/jqgrid/i18n/grid.locale-en.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ORCA/dependencies/controls/jqgrid/plugins/grid.addons.js" afterPath="$PROJECT_DIR$/target/ORCA/dependencies/controls/jqgrid/plugins/grid.addons.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ORCA/dependencies/controls/jqgrid/plugins/grid.postext.js" afterPath="$PROJECT_DIR$/target/ORCA/dependencies/controls/jqgrid/plugins/grid.postext.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ORCA/dependencies/controls/jqgrid/plugins/grid.setcolumns.js" afterPath="$PROJECT_DIR$/target/ORCA/dependencies/controls/jqgrid/plugins/grid.setcolumns.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ORCA/dependencies/controls/jqgrid/plugins/jquery.contextmenu.js" afterPath="$PROJECT_DIR$/target/ORCA/dependencies/controls/jqgrid/plugins/jquery.contextmenu.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ORCA/dependencies/controls/jqgrid/plugins/jquery.searchFilter.js" afterPath="$PROJECT_DIR$/target/ORCA/dependencies/controls/jqgrid/plugins/jquery.searchFilter.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ORCA/dependencies/controls/jqgrid/plugins/jquery.tablednd.js" afterPath="$PROJECT_DIR$/target/ORCA/dependencies/controls/jqgrid/plugins/jquery.tablednd.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ORCA/dependencies/controls/jqgrid/plugins/searchFilter.css" afterPath="$PROJECT_DIR$/target/ORCA/dependencies/controls/jqgrid/plugins/searchFilter.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ORCA/dependencies/controls/jqgrid/plugins/ui.multiselect.css" afterPath="$PROJECT_DIR$/target/ORCA/dependencies/controls/jqgrid/plugins/ui.multiselect.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ORCA/dependencies/controls/jqgrid/plugins/ui.multiselect.js" afterPath="$PROJECT_DIR$/target/ORCA/dependencies/controls/jqgrid/plugins/ui.multiselect.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ORCA/dependencies/css/ui.jqgrid.css" afterPath="$PROJECT_DIR$/target/ORCA/dependencies/css/ui.jqgrid.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ORCA/index.html" afterPath="$PROJECT_DIR$/target/ORCA/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ORCA/js/App_Config.js" afterPath="$PROJECT_DIR$/target/ORCA/js/App_Config.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ORCA/js/B2CCore.js" afterPath="$PROJECT_DIR$/target/ORCA/js/B2CCore.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ORCA/js/views/About.js" afterPath="$PROJECT_DIR$/target/ORCA/js/views/About.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ORCA/js/views/BaseView.js" afterPath="$PROJECT_DIR$/target/ORCA/js/views/BaseView.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ORCA/js/views/Catalog.js" afterPath="$PROJECT_DIR$/target/ORCA/js/views/Catalog.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ORCA/js/views/CatalogItem.js" afterPath="$PROJECT_DIR$/target/ORCA/js/views/CatalogItem.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ORCA/js/views/Home.js" afterPath="$PROJECT_DIR$/target/ORCA/js/views/Home.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ORCA/js/views/Login.js" afterPath="$PROJECT_DIR$/target/ORCA/js/views/Login.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ORCA/templates/Catalog.html" afterPath="$PROJECT_DIR$/target/ORCA/templates/Catalog.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ORCA/templates/CatalogItem.html" afterPath="$PROJECT_DIR$/target/ORCA/templates/CatalogItem.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ORCA/templates/Home.html" afterPath="$PROJECT_DIR$/target/ORCA/templates/Home.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ORCA/templates/login.html" afterPath="$PROJECT_DIR$/target/ORCA/templates/login.html" />
     </list>
     <ignored path="ORCA.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -110,73 +129,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Dashboard.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/Dashboard.html">
+      <file leaf-file-name="VendorProduct.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/hmstn/orca/domain/VendorProduct.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="20" selection-start="748" selection-end="748" vertical-scroll-proportion="-11.4">
+            <state line="32" column="43" selection-start="933" selection-end="933" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DashboardList.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/DashboardList.html">
+      <file leaf-file-name="VendorProductUtility.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/hmstn/orca/Utility/VendorProductUtility.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="77" selection-start="311" selection-end="311" vertical-scroll-proportion="0.18765432">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DashboardRepository.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/hmstn/orca/repository/DashboardRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="153" column="59" selection-start="7027" selection-end="7027" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DashboardItem.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/DashboardItem.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="32" selection-start="1012" selection-end="1012" vertical-scroll-proportion="-13.12">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.less" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/css/less/main.less">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="18" selection-start="593" selection-end="593" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CatalogList.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/CatalogList.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="17" selection-start="1351" selection-end="1351" vertical-scroll-proportion="-16.72">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CatalogItem.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/CatalogItem.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="14" selection-start="832" selection-end="832" vertical-scroll-proportion="-6.08">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CatalogItem.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/js/views/CatalogItem.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="65" selection-start="696" selection-end="696" vertical-scroll-proportion="0.0">
+            <state line="20" column="56" selection-start="658" selection-end="658" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -185,7 +150,70 @@
       <file leaf-file-name="Dashboard.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/js/views/Dashboard.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="164" column="32" selection-start="4983" selection-end="4983" vertical-scroll-proportion="0.0">
+            <state line="152" column="3" selection-start="4818" selection-end="5136" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DashboardItem.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/DashboardItem.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="41" selection-start="254" selection-end="254" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Dashboard.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/Dashboard.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="19" column="47" selection-start="813" selection-end="813" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Catalog.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/Catalog.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DashboardItem.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/js/views/DashboardItem.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="96" column="16" selection-start="2752" selection-end="2752" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CatalogController.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/hmstn/orca/controller/CatalogController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="21" selection-start="44" selection-end="58" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DashboardController.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/hmstn/orca/controller/DashboardController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="22" selection-start="8" selection-end="22" vertical-scroll-proportion="-0.18926975">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DashboardVendorProduct.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/hmstn/orca/domain/DashboardVendorProduct.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="47" selection-start="236" selection-end="236" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -199,29 +227,28 @@
     </FindUsagesManager>
   </component>
   <component name="Git.Settings">
-    <option name="CHECKOUT_INCLUDE_TAGS" value="false" />
-    <option name="UPDATE_CHANGES_POLICY" value="STASH" />
     <option name="LINE_SEPARATORS_CONVERSION" value="ASK" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/index.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/templates/Dashboard.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/css/less/bootstrap.less" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hmstn/orca/domain/DashboardVendorProduct.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hmstn/orca/repository/CatalogRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hmstn/orca/domain/VendorProduct.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/js/views/Catalog.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/js/views/CatalogItem.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/js/views/DashboardItem.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/templates/CatalogItem.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/templates/CatalogList.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/templates/DashboardItem.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/css/less/main.less" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hmstn/orca/repository/DashboardRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hmstn/orca/Enum/DashboardItemStatus.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hmstn/orca/domain/DashboardVendorProduct.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hmstn/orca/domain/VendorProduct.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hmstn/orca/repository/CatalogRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hmstn/orca/Utility/VendorProductUtility.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/js/views/Dashboard.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/templates/DashboardList.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hmstn/orca/repository/DashboardRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/templates/Dashboard.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/templates/DashboardItem.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/js/views/DashboardItem.js" />
       </list>
     </option>
   </component>
@@ -302,6 +329,30 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ORCA" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ORCA" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -489,10 +540,6 @@
               <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="less" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -517,6 +564,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="orca" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Utility" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -606,6 +657,36 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="Enum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ORCA" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yuri" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="orca" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="domain" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -638,30 +719,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="controller" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="PackagesPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ORCA" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ORCA" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -768,11 +825,14 @@
         </option>
         <option name="myRunnerParameters">
           <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
             <option name="goals">
               <list />
             </option>
-            <option name="profiles">
-              <set />
+            <option name="profilesMap">
+              <map />
             </option>
             <option name="workingDirPath" value="" />
           </MavenRunnerParameters>
@@ -797,7 +857,17 @@
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
-    <configuration default="true" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" adl_options="" air_descriptor_path="" air_program_params="" air_publisher_id="" air_root_dir_path="" air_run_mode="AppDescriptor" browser_family="FIREFOX" class_name="" debugger_sdk="Module SDK" html_or_swf_file_path="" launcher_type="OSDefault" main_class_name="" method_name="" module_name="" output_log_level="" package_name="" player_path="FlashPlayer.exe" port="0" run_mode="HtmlOrSwfFile" run_trusted="true" scope="Class" socket_policy_port="0" url_to_launch="http://">
+    <configuration default="true" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" class_name="" method_name="" output_log_level="" package_name="" scope="Class">
+      <option name="BCName" value="" />
+      <option name="launcherParameters">
+        <LauncherParameters>
+          <option name="browserFamily" value="FIREFOX" />
+          <option name="launcherType" value="OSDefault" />
+          <option name="playerPath" value="FlashPlayerDebugger.exe" />
+        </LauncherParameters>
+      </option>
+      <option name="moduleName" value="" />
+      <option name="trusted" value="true" />
       <method>
         <option name="AntTarget" enabled="false" />
         <option name="BuildArtifacts" enabled="false" />
@@ -1063,7 +1133,7 @@
     </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
-  <component name="SvnConfiguration" maxAnnotateRevisions="500">
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false">
     <option name="USER" value="" />
     <option name="PASSWORD" value="" />
     <option name="mySSHConnectionTimeout" value="30000" />
@@ -1128,8 +1198,8 @@
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39647576" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.45916116" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1137,17 +1207,17 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29166666" sideWeight="0.21927375" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3282123" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3286908" sideWeight="0.0" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32960895" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25539568" sideWeight="0.7185714" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30675286" sideWeight="0.67966574" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32033426" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26293105" sideWeight="0.59331477" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40668523" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39647576" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32819384" sideWeight="0.0" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1185,7 +1255,10 @@
     <option name="INCLUDE_TEXT_INTO_PATCH" value="false" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
     <option name="CREATE_PATCH_EXPAND_DETAILS_DEFAULT" value="true" />
+    <option name="SHOW_FILE_HISTORY_DETAILS" value="true" />
+    <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
     <option name="LAST_COMMIT_MESSAGE" value="rjs" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
@@ -1250,116 +1323,94 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/less/thumbnails.less">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hmstn/orca/Utility/Utility.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="55" selection-start="402" selection-end="402" vertical-scroll-proportion="0.0">
+        <state line="18" column="13" selection-start="549" selection-end="549" vertical-scroll-proportion="0.088495575" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hmstn/orca/Enum/DashboardItemStatus.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="11" selection-start="267" selection-end="267" vertical-scroll-proportion="0.2862109" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hmstn/orca/domain/ItemType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="13" selection-start="201" selection-end="201" vertical-scroll-proportion="0.198146" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hmstn/orca/repository/DashboardRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="166" column="47" selection-start="7411" selection-end="7411" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/DashboardList.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="77" selection-start="246" selection-end="311" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/hmstn/orca/repository/CatalogRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="432" column="0" selection-start="16318" selection-end="16318" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hmstn/orca/domain/DashboardVendorProduct.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="49" selection-start="238" selection-end="238" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/views/DashboardItem.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="44" selection-start="1246" selection-end="1246" vertical-scroll-proportion="0.45967743">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/views/Catalog.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="90" column="90" selection-start="2723" selection-end="2723" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/Catalog.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="37" selection-start="446" selection-end="446" vertical-scroll-proportion="-9.12">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/CatalogItem.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="14" selection-start="832" selection-end="832" vertical-scroll-proportion="-6.08">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/less/main.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="18" selection-start="593" selection-end="593" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="418" column="50" selection-start="15830" selection-end="15830" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/hmstn/orca/domain/VendorProduct.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="35" selection-start="820" selection-end="840" vertical-scroll-proportion="0.51974726">
-          <folding />
-        </state>
+        <state line="32" column="43" selection-start="933" selection-end="933" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/views/CatalogItem.js">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hmstn/orca/Utility/VendorProductUtility.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="65" selection-start="696" selection-end="696" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="20" column="56" selection-start="658" selection-end="658" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/CatalogList.html">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/views/Dashboard.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="17" selection-start="1351" selection-end="1351" vertical-scroll-proportion="-16.72">
+        <state line="152" column="3" selection-start="4818" selection-end="5136" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/DashboardItem.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="41" selection-start="254" selection-end="254" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/Dashboard.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="20" selection-start="748" selection-end="748" vertical-scroll-proportion="-11.4">
+        <state line="19" column="47" selection-start="813" selection-end="813" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hmstn/orca/repository/DashboardRepository.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/Catalog.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="153" column="59" selection-start="7027" selection-end="7027" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hmstn/orca/domain/DashboardVendorProduct.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="47" selection-start="236" selection-end="236" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/views/DashboardItem.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="96" column="16" selection-start="2752" selection-end="2752" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/views/Dashboard.js">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hmstn/orca/controller/CatalogController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="164" column="32" selection-start="4983" selection-end="4983" vertical-scroll-proportion="0.0">
+        <state line="3" column="21" selection-start="44" selection-end="58" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/DashboardItem.html">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hmstn/orca/controller/DashboardController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="32" selection-start="1012" selection-end="1012" vertical-scroll-proportion="-13.12">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/DashboardList.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="77" selection-start="311" selection-end="311" vertical-scroll-proportion="0.18765432">
+        <state line="0" column="22" selection-start="8" selection-end="22" vertical-scroll-proportion="-0.18926975">
           <folding />
         </state>
       </provider>

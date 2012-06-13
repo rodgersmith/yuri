@@ -9,8 +9,10 @@ package com.hmstn.orca.domain;
  */
 public class DashboardVendorProduct extends VendorProduct {
     public Integer qtyOrdered;
-    public Boolean isOpen;
     public Integer customerId;
     public String shippingDetails;
     public String paymentDetails;
+
 }
+
+

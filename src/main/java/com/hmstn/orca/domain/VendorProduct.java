@@ -1,5 +1,6 @@
 package com.hmstn.orca.domain;
 
+import com.hmstn.orca.Enum.DashboardItemStatus;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 
@@ -29,6 +30,7 @@ public class VendorProduct {
     public double unitCost;
     public String offerCloseDate;
     public int daysRemainingOnOffer;
+    public DashboardItemStatus orderStatus;
 
     public VendorProduct() {
         vendor = new Vendor();

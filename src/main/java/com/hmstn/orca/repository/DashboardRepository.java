@@ -1,5 +1,6 @@
 package com.hmstn.orca.repository;
 
+import com.hmstn.orca.Utility.VendorProductUtility;
 import com.hmstn.orca.domain.DashboardInventory;
 import com.hmstn.orca.domain.DashboardVendorProduct;
 import com.hmstn.orca.domain.ItemType;
@@ -50,7 +51,7 @@ public class DashboardRepository {
         product.isOnCurrentDashboard = true;
         product.shippingCost = 4.00;
         product.unitCost = 0.30;
-        product.isOpen = true;
+
         product.qtyOrdered = 5;
         product.customerId = 1;
         product.daysRemainingOnOffer = Days.daysBetween(DateTime.now(), DateTime.now().plusWeeks(7)).getDays();
@@ -79,9 +80,11 @@ public class DashboardRepository {
         product.unitCost = 0.30;
         product.isOnCurrentDashboard = true;
         product.daysRemainingOnOffer = Days.daysBetween(DateTime.now(), DateTime.now().plusWeeks(3)).getDays();
+        product.qtyOrdered = 5;
         product.customerId = 1;
         product.shippingDetails = "Default";
         product.paymentDetails = "Default";
+
 
         inventory.products.add(product);
 
@@ -106,6 +109,7 @@ public class DashboardRepository {
         product.shippingCost = 4.00;
         product.unitCost = 0.30;
         product.daysRemainingOnOffer = Days.daysBetween(DateTime.now(),DateTime.now().plusWeeks(9)).getDays();
+        product.qtyOrdered = 5;
         product.customerId = 1;
         product.shippingDetails = "Default";
         product.paymentDetails = "Default";
@@ -128,10 +132,11 @@ public class DashboardRepository {
         product.participantTargetNumber = 55;
         product.currentParticipantNumber = 32;
         product.itemType = type;
-        product.offerCloseDate = DateTime.now().plusMonths(2).toString("MM-dd-yyyy");
+        product.offerCloseDate = DateTime.now().minusDays(3).toString("MM-dd-yyyy");
         product.isOnCurrentDashboard = true;
         product.shippingCost = 4.00;
-        product.daysRemainingOnOffer = Days.daysBetween(DateTime.now(),DateTime.now().plusWeeks(1)).getDays();
+        product.daysRemainingOnOffer = 0;
+        product.qtyOrdered = 5;
         product.customerId = 1;
         product.shippingDetails = "Default";
         product.paymentDetails = "Default";
@@ -156,6 +161,7 @@ public class DashboardRepository {
         product.unitCost = 0.30;
         product.daysRemainingOnOffer = Days.daysBetween(DateTime.now(),DateTime.now().plusWeeks(3)).getDays();
         product.customerId = 1;
+        product.qtyOrdered = 5;
         product.shippingDetails = "Default";
         product.paymentDetails = "Default";
 
@@ -169,7 +175,8 @@ public class DashboardRepository {
 
         for(DashboardVendorProduct product: this.inventory.products){
             if (product.customerId.equals(customerId)){
-                product.participantTargetDiff = product.participantTargetNumber - product.currentParticipantNumber;
+                product.participantTargetDiff = VendorProductUtility.calculateTargetDiff(product);
+                product.orderStatus = VendorProductUtility.getItemStatus(product);
                 customerInventory.products.add(product);
             }
         }
@@ -180,7 +187,8 @@ public class DashboardRepository {
 
         for(DashboardVendorProduct product: this.inventory.products){
             if (product.id.equals(id)){
-                product.participantTargetDiff = product.participantTargetNumber - product.currentParticipantNumber;
+                product.participantTargetDiff = VendorProductUtility.calculateTargetDiff(product);
+                product.orderStatus = VendorProductUtility.getItemStatus(product);
                 return product;
             }
         }
